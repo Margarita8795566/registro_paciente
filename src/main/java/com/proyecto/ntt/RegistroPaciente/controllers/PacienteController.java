@@ -3,6 +3,7 @@ package com.proyecto.ntt.RegistroPaciente.controllers;
 import com.proyecto.ntt.RegistroPaciente.dtos.PacienteCrear;
 import com.proyecto.ntt.RegistroPaciente.services.PacienteService;
 import lombok.extern.log4j.Log4j2;
+import org.json.JSONException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,7 +27,11 @@ public class PacienteController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> borrar(@PathVariable Long id){
+    public ResponseEntity<?> borrar(@PathVariable Long id) throws JSONException {
         return service.borrar(id);
+    }
+
+    public ResponseEntity<?> existePaciente(String paciente) {
+        return null;
     }
 }
